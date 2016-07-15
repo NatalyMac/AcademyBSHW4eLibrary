@@ -4,3 +4,7 @@
 Homestead.yaml
 Homestead.json
 .env
+.env.example
+.gitignore
+.gitkeep
+.gitattributes
