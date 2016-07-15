@@ -28,11 +28,13 @@ class LendSeeder extends Seeder {
             if ( $book->is_charged == false)
             {
                 $user_id =  User::all()->random(1)->id;
-                DB::table('lends')->insert([
-                    ['user_id'=>$user_id, 'book_id'=>$book_id,
-                        'date_getin_plan' => date ('Y:m:d H:m:s', (time()+60000)),
-                        'created_at' => date ('Y:m:d H:m:s', time())],
-                ]);
+
+                $lend = new Lend();
+                $lend->user_id = $user_id;
+                $lend->book_id = $book_id;
+                $lend->date_getin_plan = date ('Y:m:d H:m:s', (time()+60000));
+
+                $lend->save();
                 $book->is_charged = true;
                 $book->save();
             };

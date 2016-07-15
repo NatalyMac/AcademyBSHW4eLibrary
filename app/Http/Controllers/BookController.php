@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 
 use App\Http\Requests;
-use App\Book;
+use App\Book as Book;
 
 class BookController extends Controller
 {

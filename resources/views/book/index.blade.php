@@ -47,7 +47,7 @@
              </tr>
         @endforeach
 
-        <div class="pagination">{{ $books->links() }}</div>
+      <div class="pagination">{{ $books->links() }}</div>
         </tbody>
     </table>
 @stop

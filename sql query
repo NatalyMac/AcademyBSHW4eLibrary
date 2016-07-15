@@ -1,0 +1,8 @@
+SELECT books. * , users.firstname
+FROM books
+LEFT JOIN (
+SELECT lends.user_id, lends.book_id
+FROM lends
+WHERE lends.date_getin_fact IS NULL
+) AS l ON books.id = l.book_id
+LEFT JOIN users ON users.id = l.user_id
