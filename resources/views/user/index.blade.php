@@ -26,7 +26,8 @@
         <td> {{ $user->firstname}}</td>
         <td> {{ $user->lastname}}</td>
         <td> {{ $user->email}}</td>
-        <td> {{ $user->lends()->whereNull('date_getin_fact')->count()}}</td>
+       {{-- <td> {{ $user->lends()->whereNull('date_getin_fact')->count()}}</td>--}}
+        <td> {{$user->book_count}}</td>
         <td width="380">
 
             <a class=" btn btn-small btn-primary" href="{{ URL::to('users/'.$user->id) }}">Show this user </a>

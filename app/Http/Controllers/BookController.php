@@ -7,13 +7,16 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 
 use App\Http\Requests;
-use App\Book as Book;
+use App\Book;
+
 
 class BookController extends Controller
 {
     public function index()
     {
-        $books = Book::paginate(10);
+        //$books=Book::paginate(10);
+        $books = Book::bookHolder1()->paginate(10);
+       
         return view('book/index',['books'=>$books]);
     }
 

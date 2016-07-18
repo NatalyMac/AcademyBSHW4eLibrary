@@ -14,8 +14,8 @@
             <th>Title</th>
             <th>Author</th>
             <th>Year</th>
-            <th> Action</th>
             <th>Hold on by</th>
+            <th> Action</th>
         </tr>
         </thead>
         <tbody>
@@ -27,6 +27,7 @@
                 <td> {{ $book->title}}</td>
                 <td> {{ $book->author}}</td>
                 <td> {{ $book->year}}</td>
+                <td> {{ $book->firstname}} {{ $book->lastname}}</td>
 
                 <td width="390">
                     <a class=" btn btn-small btn-primary" href="{{ URL::to('books/'.$book->id) }}">Show this book </a>
@@ -36,18 +37,19 @@
                     {!!  Form::submit('Delete this book',['class'=>'btn btn-warning']) !!}
                     {!!  Form::close() !!}
                 </td>
-
+{{--
                 @foreach($book->lends as $lend)
                     @if ($lend->date_getin_fact == null)
                          <td> {{$lend->user->firstname}} </td>
                     @endif
                 @endforeach
-                {{-- $book->lends()->whereNull('date_getin_fact')->first()->user  doesnt work, have broken my brain, just an array --}}
+--}}
+
 
              </tr>
         @endforeach
 
-      <div class="pagination">{{ $books->links() }}</div>
+     <div class="pagination">{{ $books->links() }}</div>
         </tbody>
     </table>
 @stop
