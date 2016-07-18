@@ -8,3 +8,4 @@ Homestead.json
 .gitignore
 .gitkeep
 .gitattributes
+/.idea
